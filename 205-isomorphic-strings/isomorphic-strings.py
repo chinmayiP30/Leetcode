@@ -1,19 +1,11 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        map_s_t = {}
-        map_t_s = {}
-
+        mapST={}
+        mapTS={}
         for i in range(len(s)):
-            a = s[i]
-            b = t[i]
-
-            if a in map_s_t and map_s_t[a] != b:
+            c1,c2=s[i],t[i]
+            if ((c1 in mapST and mapST[c1]!=c2)or (c2 in mapTS and mapTS[c2]!=c1)):
                 return False
-
-            if b in map_t_s and map_t_s[b] != a:
-                return False
-
-            map_s_t[a] = b
-            map_t_s[b] = a
-
+            mapST[c1]=c2
+            mapTS[c2]=c1
         return True
