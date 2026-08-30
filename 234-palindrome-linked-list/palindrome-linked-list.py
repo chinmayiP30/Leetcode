@@ -3,7 +3,7 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-class Solution:
+'''class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         st=[]
         temp=head
@@ -16,4 +16,13 @@ class Solution:
                 return False
             temp=temp.next
             st.pop()
-        return True
+        return True'''
+class Solution:
+    def isPalindrome(self, head):
+        a = []
+
+        while head:
+            a.append(head.val)
+            head = head.next
+
+        return a == a[::-1]
