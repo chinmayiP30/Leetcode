@@ -8,5 +8,4 @@ class Solution:
                 if num &(1<<i):
                     sub.append(nums[i])
             ans.append(sub)
-        return ans    
-        
+        return ans
